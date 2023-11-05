@@ -64,13 +64,30 @@ public class EmployeeController {
     }
 
     @PostMapping("/update")
-    public NetResult update(@RequestBody Employee employee){
+    public NetResult update(@RequestBody Employee employee) {
+        System.out.println(employee);
         try {
+            if (StringUtil.isEmpty(employee.getPhone())) {
+                return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,"手机号不能为空");
+            }
+            if (StringUtil.isEmpty(employee.getUsername())) {
+                return ResultGenerator.genErrorResult(NetCode.USERNAME_INVALID, "用户名不能为空");
+            }
+            if (StringUtil.isEmpty(employee.getEmail())) {
+                return ResultGenerator.genErrorResult(NetCode.EMAIL_INVALID, "邮箱不能为空");
+            }
+            if (StringUtil.isEmpty(employee.getPassword())) {
+                employee.setPassword(MD5Util.MD5Encode("123456", "utf-8"));
+            }
+            Department department = iDepartmentService.find(employee.getDid());
+            if (department == null) {
+                return ResultGenerator.genErrorResult(NetCode.DEPARTMENT_ID_INVALID, "非法的部门id");
+            }
             iEmployeeService.update(employee);
-            return ResultGenerator.genSuccessResult();
-        }catch (Exception e){
+            return ResultGenerator.genSuccessResult(employee);
+        } catch (Exception e) {
             e.printStackTrace();
-            return ResultGenerator.genErrorResult(NetCode.UPDATE_DEPARTMENT_ERROR,"更新员工失败！"+e.getMessage());
+            return ResultGenerator.genErrorResult(NetCode.UPDATE_DEPARTMENT_ERROR, "修改员工失败！" + e.getMessage());
         }
     }
 
@@ -80,7 +97,7 @@ public class EmployeeController {
         return  ResultGenerator.genSuccessResult(employee);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/list")
     public NetResult findAll(){
         List<Employee> employees = iEmployeeService.findAll();
         return ResultGenerator.genSuccessResult(employees);

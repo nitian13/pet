@@ -22,7 +22,7 @@ public interface EmployeeMapper {
 
     /*修改*/
     @Update("update t_employee set " +
-            " username=#{username},email=#{email},phone=#{phone},password=#{password},age=#{age},state=#{state} " +
+            " username=#{username}, email=#{email},phone=#{phone},password=#{password},age=#{age}" +
             " where id=#{id}")
     void update(Employee employee);
 
