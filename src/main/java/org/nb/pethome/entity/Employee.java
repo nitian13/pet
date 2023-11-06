@@ -2,8 +2,6 @@ package org.nb.pethome.entity;
 
 import lombok.Data;
 
-
-
 @Data
 public class Employee {
     /*主键*/
