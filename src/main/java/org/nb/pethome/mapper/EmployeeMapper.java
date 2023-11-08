@@ -2,6 +2,7 @@ package org.nb.pethome.mapper;
 
 import org.apache.ibatis.annotations.*;
 import org.nb.pethome.entity.Employee;
+import org.nb.pethome.net.param.LoginParam;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -41,5 +42,10 @@ public interface EmployeeMapper {
     @Select("select * from t_employee where id=#{id}")
     Employee findById(Long id);
 
+    @Select("select * from t_employee where username=#{username} and password=#{password}")
+    Employee login(LoginParam loginParam);
+
+    @Select("select * from t_employee where phone=#{phone} and password=#{password}")
+    Employee select(String phone,String password);
 
 }

@@ -1,5 +1,6 @@
 package org.nb.pethome.controller;
 
+import org.nb.pethome.common.Urls;
 import org.nb.pethome.entity.Department;
 import org.nb.pethome.entity.Employee;
 import org.nb.pethome.net.NetCode;
@@ -97,10 +98,11 @@ public class EmployeeController {
         return  ResultGenerator.genSuccessResult(employee);
     }
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     public NetResult findAll(){
         List<Employee> employees = iEmployeeService.findAll();
         return ResultGenerator.genSuccessResult(employees);
     }
+
 
 }

@@ -2,8 +2,10 @@ package org.nb.pethome.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Employee {
+public class Employee implements Serializable {
     /*主键*/
     private Long id;
     /*员工编号*/
@@ -22,6 +24,8 @@ public class Employee {
     private int state;
 
     private Department department;
+
+    private String token;
 }
 
 

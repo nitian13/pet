@@ -1,6 +1,7 @@
 package org.nb.pethome.service;
 
 import org.nb.pethome.entity.Employee;
+import org.nb.pethome.net.param.LoginParam;
 
 import java.util.List;
 
@@ -17,4 +18,8 @@ public interface IEmployeeService {
     List<Employee> findAll();
 
     Employee findById(Long id);
+
+    Employee login(LoginParam loginParam);
+
+    Employee select(String phone,String password);
 }

@@ -23,4 +23,7 @@ public class NetCode {
     public static final int SHOP_NAME_INVALID =0x17 ;
     public static final int SHOP_ADDRESS_INVALID =0x18 ;
     public static final int SHOP_LOGO_INVALID =0x19 ;
+    public static final int PASSWORD_INVALID =0x20 ;
+    public static final int TOKEN_INVALID = 0x21;
+    public static final int TOKEN_NOT_EXIST =0x22 ;
 }
