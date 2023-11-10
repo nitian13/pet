@@ -7,26 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8368a1ea-2653-4325-bb4e-513625ebf029" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/interceptor/TokenInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/LoginParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/TokenConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/UsersMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/RegisterParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUsersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UsersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/UserMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/interceptor/TokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/interceptor/TokenInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/EmployeeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/NetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/NetCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IEmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/RedisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/EmployeeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/EmployeeMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/EmployeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/interceptor/TokenInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/interceptor/TokenInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/EmployeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/EmployeeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/NetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/NetCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IEmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IEmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/EmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/RedisService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/EmployeeMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/EmployeeMapperTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +93,8 @@
       <recent name="org.nb.pethome.interceptor" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.nb.pethome.utils" />
       <recent name="org.nb.pethome" />
+      <recent name="org.nb.pethome.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HUAWEI\IdeaProjects\petHome\src\main\java\org\nb\pethome\common" />
@@ -95,7 +104,39 @@
       <recent name="C:\Users\HUAWEI\IdeaProjects\petHome\src\main\java\org\nb\pethome\controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MyApplication">
+  <component name="RunManager" selected="JUnit.UserMapperTest.testAdd">
+    <configuration name="EmployeeMapperTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pethome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nb.pethome.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nb.pethome.mapper" />
+      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.mapper.EmployeeMapperTest" />
+      <option name="METHOD_NAME" value="addTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeMapperTest.listTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pethome" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nb.pethome.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nb.pethome.mapper" />
+      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.mapper.EmployeeMapperTest" />
+      <option name="METHOD_NAME" value="listTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RedisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pethome" />
       <extension name="coverage">
@@ -111,49 +152,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RedisTest.delRedis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMapperTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pethome" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nb.pethome.utils.*" />
+          <option name="PATTERN" value="org.nb.pethome.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nb.pethome.utils" />
-      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.utils.RedisTest" />
-      <option name="METHOD_NAME" value="delRedis" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RedisTest.getRedis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pethome" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.nb.pethome.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.nb.pethome.utils" />
-      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.utils.RedisTest" />
-      <option name="METHOD_NAME" value="getRedis" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RedisTest.setRedis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pethome" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.nb.pethome.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.nb.pethome.utils" />
-      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.utils.RedisTest" />
-      <option name="METHOD_NAME" value="setRedis" />
+      <option name="PACKAGE_NAME" value="org.nb.pethome.mapper" />
+      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="testAdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -315,20 +324,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RedisTest.setRedis" />
-      <item itemvalue="JUnit.RedisTest.getRedis" />
-      <item itemvalue="JUnit.RedisTest.delRedis" />
       <item itemvalue="JUnit.RedisTest" />
+      <item itemvalue="JUnit.EmployeeMapperTest.addTest" />
+      <item itemvalue="JUnit.EmployeeMapperTest.listTest" />
       <item itemvalue="Spring Boot.MyApplication" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.801" />
+      <item itemvalue="JUnit.UserMapperTest.testAdd" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserMapperTest.testAdd" />
         <item itemvalue="Spring Boot.MyApplication" />
+        <item itemvalue="JUnit.EmployeeMapperTest.listTest" />
+        <item itemvalue="JUnit.EmployeeMapperTest.addTest" />
         <item itemvalue="JUnit.RedisTest" />
-        <item itemvalue="JUnit.RedisTest.setRedis" />
-        <item itemvalue="JUnit.RedisTest.getRedis" />
-        <item itemvalue="JUnit.RedisTest.delRedis" />
       </list>
     </recent_temporary>
   </component>
@@ -363,6 +372,9 @@
       <workItem from="1699231805143" duration="10497000" />
       <workItem from="1699318270928" duration="7320000" />
       <workItem from="1699456862045" duration="8319000" />
+      <workItem from="1699491118275" duration="18805000" />
+      <workItem from="1699547103815" duration="27000" />
+      <workItem from="1699547142838" duration="4291000" />
     </task>
     <servers />
   </component>
@@ -386,14 +398,14 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1698628476011" />
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1699465840607">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1699550214267">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1699465840607" />
-    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1699264703673">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1699550214267" />
+    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1699500422920">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1699264703673" />
+    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1699500422920" />
     <state x="370" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1699289450394">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -402,42 +414,42 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="93" y="93" width="1350" height="630" key="DiffContextDialog/0.0.1536.816@0.0.1536.816" timestamp="1699466668774" />
-    <state x="548" y="149" key="FileChooserDialogImpl" timestamp="1699461365937">
+    <state x="548" y="149" key="FileChooserDialogImpl" timestamp="1699547275175">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1699461365937" />
-    <state width="1493" height="352" key="GridCell.Tab.0.bottom" timestamp="1699466710220">
+    <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1699547275175" />
+    <state width="1493" height="156" key="GridCell.Tab.0.bottom" timestamp="1699551474113">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.0.center" timestamp="1699466710220">
+    <state width="1493" height="156" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699551474113" />
+    <state width="1493" height="156" key="GridCell.Tab.0.center" timestamp="1699551474113">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.0.left" timestamp="1699466710220">
+    <state width="1493" height="156" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1699551474113" />
+    <state width="1493" height="156" key="GridCell.Tab.0.left" timestamp="1699551474113">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.0.right" timestamp="1699466710220">
+    <state width="1493" height="156" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1699551474113" />
+    <state width="1493" height="156" key="GridCell.Tab.0.right" timestamp="1699551474113">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.1.bottom" timestamp="1699466710220">
+    <state width="1493" height="156" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1699551474113" />
+    <state width="1493" height="229" key="GridCell.Tab.1.bottom" timestamp="1699549014923">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.1.center" timestamp="1699466710220">
+    <state width="1493" height="229" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
+    <state width="1493" height="229" key="GridCell.Tab.1.center" timestamp="1699549014923">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.1.left" timestamp="1699466710220">
+    <state width="1493" height="229" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
+    <state width="1493" height="229" key="GridCell.Tab.1.left" timestamp="1699549014923">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
-    <state width="1493" height="352" key="GridCell.Tab.1.right" timestamp="1699466710220">
+    <state width="1493" height="229" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
+    <state width="1493" height="229" key="GridCell.Tab.1.right" timestamp="1699549014923">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="352" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1699466710220" />
+    <state width="1493" height="229" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
     <state width="1024" height="50" key="GridCell.Tab.2.bottom" timestamp="1698630890771">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

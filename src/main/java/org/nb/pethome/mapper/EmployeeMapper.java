@@ -12,9 +12,9 @@ import java.util.List;
 public interface EmployeeMapper {
 
     /*增加*/
-    @Insert("insert into t_employee(username,email,phone,age,state,did)" +
-            "values(#{username},#{email},#{phone},#{age},#{state},#{did})")
-    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    @Insert("insert into t_employee(username,email,phone,password,age,state,did)" +
+            "values(#{username},#{email},#{phone},#{password},#{age},#{state},#{did})")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     int add(Employee employee);
 
     /*删除*/
@@ -43,7 +43,7 @@ public interface EmployeeMapper {
     Employee findById(Long id);
 
     @Select("select * from t_employee where username=#{username} and password=#{password}")
-    Employee login(LoginParam loginParam);
+    Employee login(Employee employee);
 
     @Select("select * from t_employee where phone=#{phone} and password=#{password}")
     Employee select(String phone,String password);

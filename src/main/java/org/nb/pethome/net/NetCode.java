@@ -26,4 +26,5 @@ public class NetCode {
     public static final int PASSWORD_INVALID =0x20 ;
     public static final int TOKEN_INVALID = 0x21;
     public static final int TOKEN_NOT_EXIST =0x22 ;
+    public static final int AGE_INVALID =0x23 ;
 }

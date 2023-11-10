@@ -19,7 +19,7 @@ public interface IEmployeeService {
 
     Employee findById(Long id);
 
-    Employee login(LoginParam loginParam);
+    Employee login(Employee employee);
 
     Employee select(String phone,String password);
 }

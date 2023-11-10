@@ -1,7 +1,9 @@
 package org.nb.pethome.service;
 
+import org.nb.pethome.entity.Employee;
+import org.nb.pethome.entity.Users;
 import org.nb.pethome.net.NetResult;
-import org.nb.pethome.net.param.LoginParam;
+
 
 public interface IUserService {
 
@@ -11,5 +13,9 @@ public interface IUserService {
     NetResult sendRegisterCode(String phone);
 
 
-    NetResult adminLogin(LoginParam loginParam);
+    NetResult adminLogin(Employee employee);
+
+    NetResult login(Employee employee);
+
+    NetResult register(Users users);
 }

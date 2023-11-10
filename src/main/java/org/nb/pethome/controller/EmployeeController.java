@@ -98,7 +98,7 @@ public class EmployeeController {
         return  ResultGenerator.genSuccessResult(employee);
     }
 
-    @PostMapping("/list")
+    @GetMapping("/list")
     public NetResult findAll(){
         List<Employee> employees = iEmployeeService.findAll();
         return ResultGenerator.genSuccessResult(employees);
