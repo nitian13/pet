@@ -43,7 +43,7 @@ public interface EmployeeMapper {
     Employee findById(Long id);
 
     @Select("select * from t_employee where username=#{username} and password=#{password}")
-    Employee login(Employee employee);
+    Employee login(LoginParam loginParam);
 
     @Select("select * from t_employee where phone=#{phone} and password=#{password}")
     Employee select(String phone,String password);

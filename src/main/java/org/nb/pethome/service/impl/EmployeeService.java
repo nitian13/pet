@@ -4,6 +4,7 @@ import org.nb.pethome.entity.Department;
 import org.nb.pethome.entity.Employee;
 import org.nb.pethome.mapper.DepartmentMapper;
 import org.nb.pethome.mapper.EmployeeMapper;
+import org.nb.pethome.net.param.LoginParam;
 import org.nb.pethome.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,8 +72,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee login(Employee employee) {
-        return employeeMapper.login(employee);
+    public Employee login(LoginParam loginParam) {
+        return employeeMapper.login(loginParam);
     }
 
 

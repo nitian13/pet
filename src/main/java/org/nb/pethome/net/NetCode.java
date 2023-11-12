@@ -27,4 +27,10 @@ public class NetCode {
     public static final int TOKEN_INVALID = 0x21;
     public static final int TOKEN_NOT_EXIST =0x22 ;
     public static final int AGE_INVALID =0x23 ;
+    public static final int PET_NAME_INVALID = 0x24;
+    public static final int ADDRESS_INVALID =0x25 ;
+    public static final int SEX_INVALID = 0x26;
+    public static final int ISINOCULATION_INVALID =0x27 ;
+    public static final int BIRTH_INVALID = 0x28;
+    public static final int ID_INVALID =0x29 ;
 }

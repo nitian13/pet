@@ -15,7 +15,7 @@ public interface UsersMapper {
 
     @Insert("insert into t_user(username,phone,password,state,age,registerTime)  " +
             "values(#{username},#{phone},#{password},#{state},#{age},#{registerTime})")
-    int add(Users users);
+    int add(RegisterParam registerParam);
 
     @Select("select * from t_user where phone=#{phone} and password=#{password}")
     Users getUser(@Param("phone") String phone, @Param("password") String password);
@@ -25,4 +25,7 @@ public interface UsersMapper {
 
     @Select("select * from t_user where phone=#{phone}")
     Users selectPhone(String phone);
+
+    @Select("select * from t_user where id=#{id}")
+    Users findById(long id);
 }

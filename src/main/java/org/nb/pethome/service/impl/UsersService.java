@@ -18,8 +18,8 @@ public class UsersService implements IUsersService {
     }
 
     @Override
-    public int add(Users users) {
-        return usersMapper.add(users);
+    public int add(RegisterParam registerParam) {
+        return usersMapper.add(registerParam);
     }
 
     @Override
@@ -35,5 +35,10 @@ public class UsersService implements IUsersService {
     @Override
     public Users selectPhone(String phone) {
         return usersMapper.selectPhone(phone);
+    }
+
+    @Override
+    public Users findById(long id) {
+        return usersMapper.findById(id);
     }
 }

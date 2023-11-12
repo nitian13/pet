@@ -8,4 +8,5 @@ public class LoginParam {
     String phone;
     String password;
     String username;
+    private int type;
 }
