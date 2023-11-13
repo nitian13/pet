@@ -2,20 +2,24 @@ package org.nb.pethome.controller;
 
 
 
-import jdk.internal.instrumentation.Logger;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 import org.nb.pethome.common.Constants;
 import org.nb.pethome.entity.Employee;
 import org.nb.pethome.entity.Result;
 import org.nb.pethome.entity.Users;
+import org.nb.pethome.interceptor.TokenInterceptor;
 import org.nb.pethome.net.NetCode;
 import org.nb.pethome.net.NetResult;
 import org.nb.pethome.net.param.LoginParam;
 import org.nb.pethome.net.param.RegisterParam;
+import org.nb.pethome.service.IEmployeeService;
 import org.nb.pethome.service.impl.RedisService;
 import org.nb.pethome.service.impl.UserService;
 import org.nb.pethome.utils.*;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -33,10 +37,11 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 public class LoginController {
-    private Logger logger = (Logger) LoggerFactory.getLogger(LoginController.class);
     private RedisService redisService;
     private UserService userService;
+    private IEmployeeService iEmployeeService;
     private RedisTemplate redisTemplate;
+    private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
     private GetCode getCode;
 
     @Autowired
@@ -50,9 +55,10 @@ public class LoginController {
 
     @PostMapping(value = "/login" ,produces = {"application/json", "application/xml"})
     public NetResult adminLogin(@RequestBody LoginParam loginParam){
-        String expiredV = redisService.getValue(loginParam.getPhone());
-        if (expiredV==null){
-            return ResultGenerator.genFailResult("验证码错误");
+        String expiredV = (String) redisTemplate.opsForValue().get(loginParam.getPhone());
+        String code = loginParam.getCode();
+        if (!code.equals(expiredV)){
+            return ResultGenerator.genFailResult("验证码错误/过期");
         }
         if (loginParam.getType() == 0){
             try {
@@ -82,16 +88,21 @@ public class LoginController {
     @GetMapping("/sendcode")
     public NetResult SendCode(@RequestParam String phone) throws Exception {
 
+        /**
+         * 检查手机号是否空
+         */
         if (StringUtil.isEmpty(phone)) {
-            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,"手机号不能为空");
+            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,Constants.PHONE_IS_NULL);
         }
-
+        /**
+         * 检查手机号格式
+         */
         if (!RegexUtil.isPhoneValid(phone)) {
-            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID, "手机号错误");
+            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,"手机号格式不正确");
         }
         String host = "https://dfsns.market.alicloudapi.com";
         String path = "/data/send_sms";
-        String method = "POST";
+        String method = "GET";
         String appcode = "2dad1dbc5d334d179bae6ad2fb2fb853";
         Map<String, String> headers = new HashMap<String, String>();
         //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
@@ -101,25 +112,22 @@ public class LoginController {
         Map<String, String> querys = new HashMap<String, String>();
         Map<String, String> bodys = new HashMap<String, String>();
         String code = getCode.sendCode();
-        bodys.put("content", "code:1234");
+        bodys.put("content", "code:"+code);
         bodys.put("template_id", "CST_ptdie100");
-        bodys.put("phone_number", "156*****140");
-
-        HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
-        HttpEntity entity = response.getEntity();
-        String result = null;
-        if (entity != null) {
-            try (InputStream inputStream = entity.getContent()) {
-                result = convertStreamToString(inputStream); // 将输入流转换为字符串
-                logger.info(result);
-                // 将新的验证码存入缓存，设置过期时间为60秒
-                redisTemplate.opsForValue().set(phone, code, 300, TimeUnit.SECONDS);
-                return ResultGenerator.genSuccessResult(Result.fromJsonString(result));
-            } catch (IOException e) {
-                // 处理异常
-            }
+        bodys.put("phone_number", phone);
+        //HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+        try {
+            HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+            String result = EntityUtils.toString(response.getEntity());
+            redisTemplate.opsForValue().set(phone, code, 300, TimeUnit.SECONDS);
+            return ResultGenerator.genSuccessResult(result);
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        return ResultGenerator.genFailResult("发送验证码失败！");
+
+
+        return ResultGenerator.genFailResult("发送验证码失败");
+
     }
 
     //处理流异常的状态
@@ -147,8 +155,8 @@ public class LoginController {
         if(!RegexUtil.isPhoneValid(phone)){
             return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,"手机号不合法");
         }
-        String expiredV = redisService.getValue(phone+phone);
 
+        String expiredV= (String) redisTemplate.opsForValue().get(phone);
         if(StringUtil.isNullOrNullStr(expiredV)){
             return  ResultGenerator.genFailResult("验证码过期");
         }else {
@@ -163,7 +171,7 @@ public class LoginController {
 
     //注册
     @PostMapping("/register")
-    public NetResult register(RegisterParam registerParam){
+    public NetResult register(@RequestBody RegisterParam registerParam){
         System.out.println();
         try {
             NetResult netResult = userService.register(registerParam);

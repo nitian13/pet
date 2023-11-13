@@ -7,32 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8368a1ea-2653-4325-bb4e-513625ebf029" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/SeekingTheLord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/SeekingTheLordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/ISeekingTheLordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/SeekingTheLordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/GetCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/HttpUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/微信图片_20231113025519.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/微信图片_20231113025526.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/SeekingTheLordMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/PetMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/AddPetParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IPetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/PetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/AddressDistanceComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/DepartmentTreeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/DistanceCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/GaoDeMapUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/JedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/MapUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/utils/RandomCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/TokenConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/EmployeeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/NetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/NetCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/SeekingTheLord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/SeekingTheLord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/SeekingTheLordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/SeekingTheLordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/ShopMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/mapper/ShopMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/LoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/LoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IUsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/RegisterParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/net/param/RegisterParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/ISeekingTheLordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/ISeekingTheLordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/IShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/SeekingTheLordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/SeekingTheLordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/ShopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nb/pethome/service/impl/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/SeekingTheLordMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/SeekingTheLordMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nb/pethome/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/TokenConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/TokenConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/entity/SeekingTheLord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/entity/SeekingTheLord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/EmployeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/EmployeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/SeekingTheLordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/SeekingTheLordMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/UsersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/mapper/UsersMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/NetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/NetCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/param/LoginParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/net/param/LoginParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IEmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IEmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/IUsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/EmployeeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/nb/pethome/service/impl/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/SeekingTheLordMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/SeekingTheLordMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/UserMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/nb/pethome/mapper/UserMapperTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,18 +125,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.SeekingTheLordMapperTest.addTest">
-    <configuration name="EmployeeMapperTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MapUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.utils.MapUtils" />
       <module name="pethome" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nb.pethome.mapper.*" />
+          <option name="PATTERN" value="org.nb.pethome.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nb.pethome.mapper" />
-      <option name="MAIN_CLASS_NAME" value="org.nb.pethome.mapper.EmployeeMapperTest" />
-      <option name="METHOD_NAME" value="addTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -322,20 +342,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EmployeeMapperTest.addTest" />
       <item itemvalue="JUnit.EmployeeMapperTest.listTest" />
       <item itemvalue="JUnit.UserMapperTest.testAdd" />
+      <item itemvalue="JUnit.SeekingTheLordMapperTest.addTest" />
       <item itemvalue="Spring Boot.MyApplication" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.801" />
-      <item itemvalue="JUnit.SeekingTheLordMapperTest.addTest" />
+      <item itemvalue="Application.MapUtils" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SeekingTheLordMapperTest.addTest" />
-        <item itemvalue="JUnit.UserMapperTest.testAdd" />
         <item itemvalue="Spring Boot.MyApplication" />
+        <item itemvalue="Application.MapUtils" />
+        <item itemvalue="JUnit.UserMapperTest.testAdd" />
         <item itemvalue="JUnit.EmployeeMapperTest.listTest" />
-        <item itemvalue="JUnit.EmployeeMapperTest.addTest" />
       </list>
     </recent_temporary>
   </component>
@@ -375,6 +395,7 @@
       <workItem from="1699547142838" duration="4291000" />
       <workItem from="1699577795324" duration="3912000" />
       <workItem from="1699787113779" duration="16000000" />
+      <workItem from="1699836618787" duration="22330000" />
     </task>
     <servers />
   </component>
@@ -398,14 +419,14 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1698628476011" />
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1699812119700">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1699892882224">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1699812119700" />
-    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1699500422920">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1699892882224" />
+    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1699894991206">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1699500422920" />
+    <state x="544" y="275" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1699894991206" />
     <state x="370" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1699289450394">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -418,38 +439,38 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="548" y="149" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1699547275175" />
-    <state width="1493" height="36" key="GridCell.Tab.0.bottom" timestamp="1699815375785">
+    <state width="1493" height="442" key="GridCell.Tab.0.bottom" timestamp="1699896946006">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="36" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699815375785" />
-    <state width="1493" height="36" key="GridCell.Tab.0.center" timestamp="1699815375785">
+    <state width="1493" height="442" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699896946006" />
+    <state width="1493" height="442" key="GridCell.Tab.0.center" timestamp="1699896946006">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="36" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1699815375785" />
-    <state width="1493" height="36" key="GridCell.Tab.0.left" timestamp="1699815375785">
+    <state width="1493" height="442" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1699896946006" />
+    <state width="1493" height="442" key="GridCell.Tab.0.left" timestamp="1699896946006">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="36" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1699815375785" />
-    <state width="1493" height="36" key="GridCell.Tab.0.right" timestamp="1699815375785">
+    <state width="1493" height="442" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1699896946006" />
+    <state width="1493" height="442" key="GridCell.Tab.0.right" timestamp="1699896946006">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="36" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1699815375785" />
-    <state width="1493" height="229" key="GridCell.Tab.1.bottom" timestamp="1699549014923">
+    <state width="1493" height="442" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1699896946006" />
+    <state width="1493" height="46" key="GridCell.Tab.1.bottom" timestamp="1699896946004">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
-    <state width="1493" height="229" key="GridCell.Tab.1.center" timestamp="1699549014923">
+    <state width="1493" height="46" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1699896946004" />
+    <state width="1493" height="46" key="GridCell.Tab.1.center" timestamp="1699896946004">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
-    <state width="1493" height="229" key="GridCell.Tab.1.left" timestamp="1699549014923">
+    <state width="1493" height="46" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1699896946004" />
+    <state width="1493" height="46" key="GridCell.Tab.1.left" timestamp="1699896946004">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
-    <state width="1493" height="229" key="GridCell.Tab.1.right" timestamp="1699549014923">
+    <state width="1493" height="46" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1699896946004" />
+    <state width="1493" height="46" key="GridCell.Tab.1.right" timestamp="1699896946004">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1699549014923" />
+    <state width="1493" height="46" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1699896946004" />
     <state width="1024" height="50" key="GridCell.Tab.2.bottom" timestamp="1698630890771">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

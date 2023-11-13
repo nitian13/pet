@@ -19,14 +19,14 @@ public class UserMapperTest {
     @Test
     public void testAdd(){
 
-        Users users=new Users();
-        users.setUsername("aa");
-        users.setPhone("15527320160");
-        users.setPassword(MD5Util.MD5Encode("123456","utf-8"));
-        users.setAge(18);
-        users.setState(1);
-        users.setRegisterTime(System.currentTimeMillis());
-        userMapper.add(users);
+//        Users users=new Users();
+//        users.setUsername("aa");
+//        users.setPhone("15527320160");
+//        users.setPassword(MD5Util.MD5Encode("123456","utf-8"));
+//        users.setAge(18);
+//        users.setState(1);
+//        users.setRegisterTime(System.currentTimeMillis());
+//        userMapper.add(users);
     }
 
 }

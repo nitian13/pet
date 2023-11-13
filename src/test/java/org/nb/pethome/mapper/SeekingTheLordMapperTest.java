@@ -19,9 +19,9 @@ public class SeekingTheLordMapperTest {
     public void addTest(){
         SeekingTheLord seekingTheLord=new SeekingTheLord();
         seekingTheLord.setName("旺财");
-        seekingTheLord.setSex(1);
+        seekingTheLord.setSex("公");
         seekingTheLord.setAddress("大咖课");
-        seekingTheLord.setBirth("2023.11.12");
+        seekingTheLord.setBirth(System.currentTimeMillis());
         seekingTheLord.setCreateTime(System.currentTimeMillis());
         seekingTheLord.setIsInoculation(1);
         seekingTheLord.setPrice(99999999);

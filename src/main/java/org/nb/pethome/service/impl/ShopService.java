@@ -53,4 +53,24 @@ public class ShopService implements IShopService {
     public void update(Shop shop) {
         shopMapper.update(shop);
     }
+
+    @Override
+    public List<Shop> paginationList(int offset, int pageSize) {
+        return shopMapper.paginationList(offset,pageSize);
+    }
+
+    @Override
+    public int count() {
+        return shopMapper.count();
+    }
+
+    @Override
+    public Shop findById(long id) {
+        return shopMapper.findById(id);
+    }
+
+    @Override
+    public Shop findByAddress(String address) {
+        return shopMapper.findByAddress(address);
+    }
 }

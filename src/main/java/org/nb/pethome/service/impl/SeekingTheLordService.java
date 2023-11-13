@@ -19,4 +19,10 @@ public class SeekingTheLordService implements ISeekingTheLordService {
     public int add(SeekingTheLord seekingTheLord) {
         return seekingTheLordMapper.add(seekingTheLord);
     }
+
+    @Override
+    public int addTask(long shop_id, long admin_id, long pet_id, long user_id, long id) {
+        return seekingTheLordMapper.addTask(shop_id,admin_id,pet_id,user_id,id);
+    }
+
 }

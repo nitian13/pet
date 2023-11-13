@@ -22,6 +22,8 @@ public interface ShopMapper {
     @Select("select * from t_shop")
     List<Shop> list();
 
+
+
     @Delete("delete from t_shop where id=#{id}")
     void remove(Long id);
 
@@ -41,6 +43,16 @@ public interface ShopMapper {
     @Update("update t_shop set name=#{name},state=#{state},tel=#{tel},address=#{address} where id=#{id}")
     void update(Shop shop);
 
+    @Select("SELECT * FROM t_shop LIMIT #{offset}, #{pageSize}")
+    List<Shop> paginationList(@Param("offset") int offset, @Param("pageSize") int pageSize);
+
+
+    @Select("SELECT COUNT(*) FROM t_shop")
+    int count();
+
     @Select("select * from t_shop where id=#{id}")
     Shop  findById(Long id);
+
+    @Select("select * from t_shop where address=#{address}")
+    Shop findByAddress(String address);
 }

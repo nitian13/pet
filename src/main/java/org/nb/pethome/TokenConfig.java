@@ -30,7 +30,11 @@ public class TokenConfig implements WebMvcConfigurer {
                 "/**/*.html",                //html静态资源
                 "/**/*.js",                  //js静态资源
                 "/**/*.css",                 //css静态资源
-                "/getverifycode"
+                "/getverifycode",
+                "/sendcode",
+                "/verifycode",
+                "/register",
+                "/user/publish"
 
         );
     }

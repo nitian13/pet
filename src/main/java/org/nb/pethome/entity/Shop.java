@@ -13,5 +13,6 @@ public class Shop {
     private String address;
     private  String logo;
     private Employee admin;
+    private long admin_id;
 
 }

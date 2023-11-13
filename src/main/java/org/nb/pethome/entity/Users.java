@@ -22,8 +22,6 @@ public class Users implements Serializable {
     private int age;
     //注册时间
     private Long registerTime;
-    //角色 0是普通用户
-    private int role;
     //token
     private String token;
 }
