@@ -39,12 +39,15 @@ public interface EmployeeMapper {
     Employee findIncumbency(Long id);
 
 
+    /*根据id查询员工*/
     @Select("select * from t_employee where id=#{id}")
     Employee findById(Long id);
 
+    /*根据名字和密码查询员工*/
     @Select("select * from t_employee where username=#{username} and password=#{password}")
     Employee login(LoginParam loginParam);
 
+    /*根据电话和密码查询员工*/
     @Select("select * from t_employee where phone=#{phone} and password=#{password}")
     Employee select(String phone,String password);
 

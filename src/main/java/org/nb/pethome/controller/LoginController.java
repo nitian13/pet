@@ -53,38 +53,49 @@ public class LoginController {
 
     }
 
+    //登录，用户/管理员
     @PostMapping(value = "/login" ,produces = {"application/json", "application/xml"})
     public NetResult adminLogin(@RequestBody LoginParam loginParam){
+        //根据手机号从redis里获取验证码
         String expiredV = (String) redisTemplate.opsForValue().get(loginParam.getPhone());
+        //获得输入的验证码
         String code = loginParam.getCode();
+        //输入的验证码和从redis获取的验证码不同
         if (!code.equals(expiredV)){
+            //验证码错误
             return ResultGenerator.genFailResult("验证码错误/过期");
         }
+        //如果type=0则为普通用户，type=1则为管理员
         if (loginParam.getType() == 0){
             try {
+                //用户登录
                 NetResult netResult = userService.login(loginParam);
                 return netResult;
             }catch (Exception e){
+                //失败则会报异常
                 return ResultGenerator.genFailResult("未知异常"+e.getMessage());
             }
         }else {
             try {
+                //管理员登录
                 NetResult netResult = userService.adminLogin(loginParam);
                 return netResult;
             }catch (Exception e){
+                //失败则会报异常
                 return ResultGenerator.genFailResult("未知异常"+e.getMessage());
             }
         }
     }
 
 
-    //登录
+    //登录，验证码发送
     @GetMapping("/getverifycode")
     public NetResult sendVerifyCode(String phone) {
         return userService.sendRegisterCode(phone);
     }
 
 
+    //第三方应用阿里云，根据手机号发送验证码
     @GetMapping("/sendcode")
     public NetResult SendCode(@RequestParam String phone) throws Exception {
 
@@ -115,16 +126,25 @@ public class LoginController {
         bodys.put("content", "code:"+code);
         bodys.put("template_id", "CST_ptdie100");
         bodys.put("phone_number", phone);
+        /*  host：请求的主机地址
+            path：请求的路径
+            method：请求的方法（GET/POST等）
+            headers：请求头信息
+            querys：请求参数
+            bodys：请求体信息*/
         //HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
         try {
+            //使用HttpUtils.doPost方法发送POST请求
             HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+            //将响应结果转化为字符串类型的数据，使用EntityUtils.toString方法将HttpResponse对象中的Entity转换为字符串类型的数据。
             String result = EntityUtils.toString(response.getEntity());
+            //设置验证码过期时间
             redisTemplate.opsForValue().set(phone, code, 300, TimeUnit.SECONDS);
+            //返回数据
             return ResultGenerator.genSuccessResult(result);
         }catch (Exception e){
             e.printStackTrace();
         }
-
 
         return ResultGenerator.genFailResult("发送验证码失败");
 
@@ -132,12 +152,16 @@ public class LoginController {
 
     //处理流异常的状态
     private String convertStreamToString(InputStream is) {
+        //高效字符流读取
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
             StringBuilder sb = new StringBuilder();
+            //一行一行的读取
             String line;
             while ((line = reader.readLine()) != null) {
+                //进行拼接
                 sb.append(line).append("\n");
             }
+            //以字符串的方式返回拼接的数据
             return sb.toString();
         } catch (IOException e) {
             // 处理异常
@@ -149,13 +173,15 @@ public class LoginController {
     //验证
     @GetMapping("/verifycode")
     public NetResult verifyCode(@RequestParam String phone,@RequestParam String code){
+        //手机号不能为空
         if (StringUtil.isEmpty(phone)){
             return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID, Constants.PHONE_IS_NULL);
         }
+        //手机号格式要正确
         if(!RegexUtil.isPhoneValid(phone)){
             return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,"手机号不合法");
         }
-
+        //通过手机号获取验证码
         String expiredV= (String) redisTemplate.opsForValue().get(phone);
         if(StringUtil.isNullOrNullStr(expiredV)){
             return  ResultGenerator.genFailResult("验证码过期");
@@ -174,6 +200,7 @@ public class LoginController {
     public NetResult register(@RequestBody RegisterParam registerParam){
         System.out.println();
         try {
+            //调用register方法
             NetResult netResult = userService.register(registerParam);
             return netResult;
         }catch (Exception e){

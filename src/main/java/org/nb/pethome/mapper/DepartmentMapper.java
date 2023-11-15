@@ -134,6 +134,7 @@ public interface DepartmentMapper {
     Department findParentDepartment(Long parent_id);
 
 
+    /*查询部门的数量*/
     @Select("select count(*) from t_department")
     Long queryCount();
 

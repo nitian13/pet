@@ -33,4 +33,8 @@ public class NetCode {
     public static final int ISINOCULATION_INVALID =0x27 ;
     public static final int BIRTH_INVALID = 0x28;
     public static final int ID_INVALID =0x29 ;
+
+    public static final int PHONE_ERROE =0X30 ;
+    public static final int PET_TYPE_ERROR = 0x31;
+    public static final int USER_LIST_IS_NULL = 0x32;
 }

@@ -6,6 +6,8 @@ import org.nb.pethome.service.ISeekingTheLordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SeekingTheLordService implements ISeekingTheLordService {
 
@@ -24,5 +26,16 @@ public class SeekingTheLordService implements ISeekingTheLordService {
     public int addTask(long shop_id, long admin_id, long pet_id, long user_id, long id) {
         return seekingTheLordMapper.addTask(shop_id,admin_id,pet_id,user_id,id);
     }
+
+    @Override
+    public List<SeekingTheLord> getPetListByState(int state) {
+        return seekingTheLordMapper.getPetListByState(state);
+    }
+
+    @Override
+    public List<SeekingTheLord> getUserList(long user_id) {
+        return seekingTheLordMapper.getUserList(user_id);
+    }
+
 
 }

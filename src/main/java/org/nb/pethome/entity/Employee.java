@@ -22,7 +22,7 @@ public class Employee implements Serializable {
     private int age;
     /* 部门 状态0正常，-1 停用*/
     private int state;
-
+    //方便传数据的
     private Department department;
 
     private String token;

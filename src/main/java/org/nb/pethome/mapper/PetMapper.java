@@ -19,7 +19,7 @@ public interface PetMapper {
     int add(Pet pet);
 
 
-    /*查询宠物*/
+    /*查询所有宠物*/
     @Select("select * from t_pet")
     List<Pet> list();
 
