@@ -51,4 +51,10 @@ public interface EmployeeMapper {
     @Select("select * from t_employee where phone=#{phone} and password=#{password}")
     Employee select(String phone,String password);
 
+
+    @Insert("insert into t_employee(username,email,phone,password,age,state)" +
+            "values(#{username},#{email},#{phone},#{password},#{age},#{state})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    int insert(Employee e);
+
 }

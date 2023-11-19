@@ -1,12 +1,9 @@
 package org.nb.pethome.service.impl;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.util.EntityUtils;
+
 import org.nb.pethome.common.Constants;
-import org.nb.pethome.entity.CodeResBean;
 import org.nb.pethome.entity.Employee;
 import org.nb.pethome.entity.Users;
-import org.nb.pethome.mapper.EmployeeMapper;
 import org.nb.pethome.net.NetCode;
 import org.nb.pethome.net.NetResult;
 import org.nb.pethome.net.param.LoginParam;
@@ -22,16 +19,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -50,14 +37,14 @@ public class UserService implements IUserService {
 
     private IUsersService iUsersService;
 
-    private GetCode getCode;
+
     @Autowired
-    public UserService(RedisService redisService, IEmployeeService iEmployeeService, RedisTemplate redisTemplate,IUsersService iUsersService,GetCode getCode) {
+    public UserService(RedisService redisService, IEmployeeService iEmployeeService, RedisTemplate redisTemplate,IUsersService iUsersService) {
         this.redisService = redisService;
         this.iEmployeeService = iEmployeeService;
         this.redisTemplate = redisTemplate;
         this.iUsersService = iUsersService;
-        this.getCode=getCode;
+
     }
 
     @Override
@@ -90,6 +77,7 @@ public class UserService implements IUserService {
         String expiredV = redisService.getValue(phone + phone);
         if (StringUtil.isNullOrNullStr(expiredV)) {
             String code = "123456" ; //+ System.currentTimeMillis()
+//            redisTemplate.opsForValue().set(phone, code, 300, TimeUnit.SECONDS);
             redisService.cacheValue(phone + phone, code, 60);
 //            CodeResBeam
             return ResultGenerator.genSuccessResult(code);
@@ -99,77 +87,36 @@ public class UserService implements IUserService {
 
     }
 
-    //管理员登录
     @Override
-    public NetResult adminLogin(LoginParam loginParam) {
-        System.out.println(loginParam);
-        //判断手机号为不为空
-        if (StringUtil.isEmpty(loginParam.getPhone())) {
-            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID, "手机号不能为空");
-        }
-        //判断密码为不为空
-        if (StringUtil.isEmpty(loginParam.getPassword())) {
-            return ResultGenerator.genErrorResult(NetCode.USERNAME_INVALID, "密码不能为空");
-        }
-        //密码md5加密
+    public NetResult login(LoginParam loginParam){
+        //如果type=0则为普通用户，type=1则为管理员
         loginParam.setPassword(MD5Util.MD5Encode(loginParam.getPassword(), "utf-8"));
-        //根据手机号和密码从数据库找这个人
-        Users users = iUsersService.getAdmin(loginParam.getPhone(),loginParam.getPassword());
-        //判断是否有这个人
-        if (users != null) {
-            //如果有 加个token
-            String token = UUID.randomUUID().toString();
-            //把token给他
-            users.setToken(token);
-            //密码设置为空
-            users.setPassword(null);
-            //设置token过期时间
-            redisTemplate.opsForValue().set(token, users, 30, TimeUnit.MINUTES);
-//            logger.info("token__"+token);
-            return ResultGenerator.genSuccessResult(users);
+
+        String token = UUID.randomUUID().toString();
+        if (loginParam.getType() == 0){
+            Users user = iUsersService.getUser(loginParam.getPhone(),loginParam.getPassword());
+            if(user== null){
+                return ResultGenerator.genFailResult("用户登录失败");
+            }
+            user.setPassword(null);
+            user.setToken(token);
+            redisTemplate.opsForValue().set(token, user, 30, TimeUnit.MINUTES);
+            return ResultGenerator.genSuccessResult(user);
+        }else if(loginParam.getType()==1){
+            Employee employee=iEmployeeService.select(loginParam.getPhone(),loginParam.getPassword());
+            if(employee== null){
+                return ResultGenerator.genFailResult("管理员登录失败");
+            }
+            employee.setPassword(null);
+            employee.setToken(token);
+            redisTemplate.opsForValue().set(token, employee, 30, TimeUnit.MINUTES);
+            return ResultGenerator.genSuccessResult(employee);
+        }else{
+            return ResultGenerator.genErrorResult(NetCode.TYPE_INVALID, "用户类型错误");
         }
-        //如果没有找到，则没有这个管理员
-        return ResultGenerator.genFailResult("你不是管理员");
 
     }
 
-
-    //用户登录
-    @Override
-    public NetResult login(LoginParam loginParam) {
-        /**
-         * 检查手机号是否为空
-         */
-        if (StringUtil.isEmpty(loginParam.getPhone())) {
-            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,Constants.PHONE_IS_NULL);
-        }
-        /**
-         * 检查手机号格式是否正确
-         */
-        if (!RegexUtil.isPhoneValid(loginParam.getPhone())) {
-            return ResultGenerator.genErrorResult(NetCode.PHONE_ERROE,"手机号格式不正确");
-        }
-        //把用户的密码进行加密
-        loginParam.setPassword(MD5Util.MD5Encode(loginParam.getPassword(), "utf-8"));
-
-        //通过用户的手机号和密码去查询用户
-        Users users = iUsersService.getUser(loginParam.getPhone(),loginParam.getPassword());
-
-        //如果数据库能够查询到
-        if(users != null){
-            //随机生成一个token
-            String token = UUID.randomUUID().toString();
-            //把这个值给用户
-            users.setToken(token);
-            //把用户的密码设为空
-            users.setPassword(null);
-            //设置token过期时间
-            redisTemplate.opsForValue().set(token, users, 30, TimeUnit.MINUTES);
-            return ResultGenerator.genSuccessResult(users);
-        }
-        //如果没找到，则没有找到这个用户
-        return ResultGenerator.genFailResult("账号密码错误");
-    }
 
 
     //注册

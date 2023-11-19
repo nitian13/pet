@@ -1,6 +1,7 @@
 package org.nb.pethome.mapper;
 
 import org.apache.ibatis.annotations.*;
+import org.nb.pethome.entity.Employee;
 import org.nb.pethome.entity.Shop;
 import org.springframework.stereotype.Repository;
 
@@ -34,14 +35,14 @@ public interface ShopMapper {
      * @param id
      */
     @Update("update t_shop set state=1 where id=#{id}")
-    void successfulAudit(Long id);
+    void auditTrue(Long id);
 
     /**
      * 审核失败，state=2为审核失败
      * @param id
      */
     @Update("update t_shop set state=2 where id=#{id}")
-    void auditFailure(Long id);
+    void auditFalse(Long id);
 
     /*修改商铺信息*/
     @Update("update t_shop set name=#{name},state=#{state},tel=#{tel},address=#{address} where id=#{id}")
@@ -62,4 +63,13 @@ public interface ShopMapper {
     /*通过地址查询商铺*/
     @Select("select * from t_shop where address=#{address}")
     Shop findByAddress(String address);
+
+    //商铺绑定管理员
+    @Update("update t_shop set admin_id=#{employee.id} where id=#{id}")
+    void addAdmin(Employee employee, long id);
+
+    /*通过管理员id查询商铺*/
+    @Select("select * from t_shop where admin_id=#{admin_id}")
+    Shop findByAdmin(long id);
+
 }

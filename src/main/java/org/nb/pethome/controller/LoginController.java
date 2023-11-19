@@ -54,8 +54,20 @@ public class LoginController {
     }
 
     //登录，用户/管理员
-    @PostMapping(value = "/login" ,produces = {"application/json", "application/xml"})
-    public NetResult adminLogin(@RequestBody LoginParam loginParam){
+    @PostMapping(value = "/login")
+    public NetResult login(@RequestBody LoginParam loginParam){
+        //电话不能为空
+        if (StringUtil.isEmpty(loginParam.getPhone())){
+            return ResultGenerator.genErrorResult(NetCode.PHONE_INVALID,Constants.PHONE_IS_NULL);
+        }
+        //密码不能为空
+        if (StringUtil.isEmpty(loginParam.getPassword())){
+            return ResultGenerator.genErrorResult(NetCode.PASSWORD_INVALID,"密码不能为空");
+        }
+        //手机号格式要正确
+        if (!RegexUtil.isPhoneValid(loginParam.getPhone())) {
+            return ResultGenerator.genErrorResult(NetCode.PHONE_ERROE,"手机号格式不正确");
+        }
         //根据手机号从redis里获取验证码
         String expiredV = (String) redisTemplate.opsForValue().get(loginParam.getPhone());
         //获得输入的验证码
@@ -65,26 +77,9 @@ public class LoginController {
             //验证码错误
             return ResultGenerator.genFailResult("验证码错误/过期");
         }
-        //如果type=0则为普通用户，type=1则为管理员
-        if (loginParam.getType() == 0){
-            try {
-                //用户登录
-                NetResult netResult = userService.login(loginParam);
-                return netResult;
-            }catch (Exception e){
-                //失败则会报异常
-                return ResultGenerator.genFailResult("未知异常"+e.getMessage());
-            }
-        }else {
-            try {
-                //管理员登录
-                NetResult netResult = userService.adminLogin(loginParam);
-                return netResult;
-            }catch (Exception e){
-                //失败则会报异常
-                return ResultGenerator.genFailResult("未知异常"+e.getMessage());
-            }
-        }
+        NetResult netResult = userService.login(loginParam);
+        return netResult;
+
     }
 
 

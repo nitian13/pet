@@ -37,4 +37,7 @@ public class NetCode {
     public static final int PHONE_ERROE =0X30 ;
     public static final int PET_TYPE_ERROR = 0x31;
     public static final int USER_LIST_IS_NULL = 0x32;
+    public static final int TYPE_INVALID = 0X33;
+    public static final int PRICE_INVALID =0X34 ;
+    public static final int SHOP_INVALID =0x35 ;
 }

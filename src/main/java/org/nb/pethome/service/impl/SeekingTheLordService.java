@@ -1,6 +1,7 @@
 package org.nb.pethome.service.impl;
 
-import org.nb.pethome.entity.SeekingTheLord;
+import org.nb.pethome.entity.Employee;
+import org.nb.pethome.net.param.SeekingTheLordParam;
 import org.nb.pethome.mapper.SeekingTheLordMapper;
 import org.nb.pethome.service.ISeekingTheLordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +19,29 @@ public class SeekingTheLordService implements ISeekingTheLordService {
         this.seekingTheLordMapper=seekingTheLordMapper;
     }
     @Override
-    public int add(SeekingTheLord seekingTheLord) {
-        return seekingTheLordMapper.add(seekingTheLord);
+    public int add(SeekingTheLordParam seekingTheLordParam) {
+        return seekingTheLordMapper.add(seekingTheLordParam);
     }
 
-    @Override
-    public int addTask(long shop_id, long admin_id, long pet_id, long user_id, long id) {
-        return seekingTheLordMapper.addTask(shop_id,admin_id,pet_id,user_id,id);
-    }
 
     @Override
-    public List<SeekingTheLord> getPetListByState(int state) {
+    public List<SeekingTheLordParam> getPetListByState(int state) {
         return seekingTheLordMapper.getPetListByState(state);
     }
 
+
     @Override
-    public List<SeekingTheLord> getUserList(long user_id) {
-        return seekingTheLordMapper.getUserList(user_id);
+    public List<SeekingTheLordParam> getAuditList(long user_id) {
+        return seekingTheLordMapper.getAuditList(user_id);
     }
 
+    @Override
+    public List<SeekingTheLordParam> getAuditListByShop(long shop_id) {
+        return seekingTheLordMapper.getAuditListByShop(shop_id);
+    }
 
+    @Override
+    public int auditSeekingTheLord(long id) {
+        return seekingTheLordMapper.auditSeekingTheLord(id);
+    }
 }

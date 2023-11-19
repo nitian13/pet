@@ -22,6 +22,7 @@ public class ShopController {
         this.iShopService = iShopService;
     }
 
+    //商铺注册
     @PostMapping("/register")
     public NetResult shopRegister(@RequestBody Shop shop) {
         if (StringUtil.isEmpty(shop.getName())) {
@@ -64,11 +65,11 @@ public class ShopController {
             return ResultGenerator.genErrorResult(NetCode.REMOVE_DEPARTMENT_ERROR, "删除失败！" + e.getMessage());
         }
     }
-
-    @PostMapping("/auditFailure")
-    public NetResult auditFailure(Long id) {
+    //审核失败
+    @PostMapping("/auditFalse")
+    public NetResult auditFalse(Long id) {
         try {
-            iShopService.auditFailure(id);
+            iShopService.auditFalse(id);
             return ResultGenerator.genSuccessResult("审核失败");
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,10 +77,12 @@ public class ShopController {
         }
     }
 
-    @PostMapping("/successfulAudit")
-    public NetResult successfulAudit(Long id) {
+
+    //通过审核
+    @PostMapping("/auditTrue")
+    public NetResult auditTrue(Long id) {
         try {
-            iShopService.successfulAudit(id);
+            iShopService.auditTrue(id);
             return ResultGenerator.genSuccessResult("审核成功");
         } catch (Exception e) {
             e.printStackTrace();

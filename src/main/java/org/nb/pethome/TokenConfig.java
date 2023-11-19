@@ -34,7 +34,9 @@ public class TokenConfig implements WebMvcConfigurer {
                 "/sendcode",
                 "/verifycode",
                 "/register",
-                "/user/publish"
+                "/user/seektheload",
+                "/shop/register",
+                "/shop/auditTrue"
 
         );
     }

@@ -12,9 +12,6 @@ public interface IUserService {
      */
     NetResult sendRegisterCode(String phone);
 
-
-    NetResult adminLogin(LoginParam loginParam);
-
     NetResult login(LoginParam loginParam) throws Exception;
 
     NetResult register(RegisterParam registerParam);

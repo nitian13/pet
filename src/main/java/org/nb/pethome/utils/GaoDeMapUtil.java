@@ -19,10 +19,10 @@ public class GaoDeMapUtil {
 
     public static Location getLngAndLag(String address) throws UnsupportedEncodingException {
         address = address.trim();
-        String url = URL + URLEncoder.encode(address, "utf-8") + "&output=JSON" + "&key=" + KEY;
+        String url = URL + URLEncoder.encode(address, "utf-8") + "&output=JSON" + "&key="+ KEY;
 
         try {
-            java.net.URL url2 = new URL(url);    // 把字符串转换为URL请求地址
+            URL url2 = new URL(url);    // 把字符串转换为URL请求地址
             HttpURLConnection connection = (HttpURLConnection) url2.openConnection();// 打开连接
             connection.connect();// 连接会话
             // 获取输入流
