@@ -4,5 +4,10 @@
       "name": "redis.host",
       "type": "java.lang.String",
       "description": "Description for redis.host."
-  }
-] }
+    },
+    {
+      "name": "spring.profiles.server.port",
+      "type": "java.lang.String",
+      "description": "Description for spring.profiles.server.port."
+    }
+  ] }

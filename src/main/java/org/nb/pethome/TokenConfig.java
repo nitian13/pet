@@ -36,7 +36,13 @@ public class TokenConfig implements WebMvcConfigurer {
                 "/register",
                 "/user/seektheload",
                 "/shop/register",
-                "/shop/auditTrue"
+                "/shop/auditTrue",
+                "/delay/addTest",
+                "/delay/add",
+                "/delay/pop",
+                "/delay/finish",
+                "/delay/delete"
+
 
         );
     }

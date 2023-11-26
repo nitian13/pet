@@ -123,6 +123,12 @@ public class PetProductController {
     public NetResult petProductSell(@RequestParam long id){
 
       int num=iPetProductService.petSell(id);
+      PetProduct petProduct=iPetProductService.getPetProductById(id);
+      //判断是否出售
+      if (petProduct.getIsSell()==1){
+          return ResultGenerator.genFailResult("宠物已出售");
+      }
+
       if (num!=1){
           return ResultGenerator.genFailResult("购买失败");
       }
